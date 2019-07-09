@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<connectors>
+		<connector label="${com.esri.geoevent.transport.hanadb-transport.CONNECTOR_LABEL}" name="hanadb-json-out" type="outbound">
+			<adapter uri="com.esri.ges.adapter.outbound/Generic-JSON/10.4.0" />
+			<transport uri="com.esri.geoevent.transport.outbound/hanaDB/10.4.0" />
+			<defaultName>hanadb-json-out</defaultName>
+			<description>${com.esri.geoevent.transport.hanadb-transport.CONNECTOR_DESC}</description>
+			<properties>
+				<advanced>
+					<property label="${com.esri.geoevent.transport.hanadb-transport.CONNECTOR_USERNAME_LBL}" name="outputUserName" source="transport" />
+					<property label="${com.esri.geoevent.transport.hanadb-transport.CONNECTOR_PASSWORD_LBL}" name="outputPassword" source="transport" />
+					<property default="false" label="${com.esri.geoevent.transport.hanadb-transport.CONNECTOR_PJSON_LBL}" name="prettyJson" source="adapter" />
+					<property default="ERRORS_IGNORED" label="${com.esri.geoevent.transport.hanadb-transport.CONNECTOR_JDBC_CONNECTION_LBL}" name="jdbcConnectionString" source="transport" />
+				</advanced>
+				<hidden>
+					<property default="application/json" label="${com.esri.geoevent.transport.hanadb-transport.CONNECTOR_MIME_TYPE_LBL}" name="mimeType" source="adapter" />
+				</hidden>
+			</properties>
+		</connector>
+	</connectors>
+</template>
